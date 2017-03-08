@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+   http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<!-- 公共信息，也可以用dubbo.properties配置 -->
+	<dubbo:application name="dubbo.provider.server" />
+	<!--check="false"记录失败注册和订阅请求，后台定时重试。 -->
+	<dubbo:registry address="zookeeper://127.0.0.1:2181" check="false" />
+	<dubbo:protocol name="dubbo" port="20880" />
+
+	<!-- 扫描注解包路径，多个包用逗号分隔，不填pacakge表示扫描当前ApplicationContext中所有的类 -->
+	<dubbo:annotation package="dubbo.provider.server.impl" />
+	<!-- 通过注册中心发现监控中心服务: -->
+	<dubbo:monitor protocol="registry" />
+
+</beans>
