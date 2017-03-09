@@ -13,7 +13,10 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.4.5.RELEASE</version>
 	</parent>
-
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>com.alibaba</groupId>
@@ -33,7 +36,7 @@
 		<dependency>
 			<groupId>org.apache.zookeeper</groupId>
 			<artifactId>zookeeper</artifactId>
-			<version>3.4.6</version>
+			<version>3.4.9</version>
 		</dependency>
 		<!-- 连接zookeeper的客户端 -->
 		<dependency>
@@ -41,11 +44,8 @@
 			<artifactId>zkclient</artifactId>
 			<version>0.1</version>
 		</dependency>
-		<!-- <dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>spring-boot-starter-dubbo</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
-		</dependency> -->
+		<!-- <dependency> <groupId>com.alibaba</groupId> <artifactId>spring-boot-starter-dubbo</artifactId> 
+			<version>1.0.0-SNAPSHOT</version> </dependency> -->
 		<!-- 接口统一服务 -->
 		<dependency>
 			<groupId>lyd-dubbo</groupId>
@@ -63,24 +63,6 @@
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
 	</dependencies>
-	<repositories>
-		<repository>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-			<id>public</id>
-			<name>Public Repositories</name>
-			<url>http://123.56.120.131:8888/nexus/content/groups/public/</url>
-		</repository>
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>public</id>
-			<name>Public Repositories</name>
-			<url>http://123.56.120.131:8888/nexus/content/groups/public/</url>
-		</pluginRepository>
-	</pluginRepositories>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -89,9 +71,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version>
-	</properties>
-
+	<repositories></repositories>
 </project>
