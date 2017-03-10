@@ -3,7 +3,6 @@ package dubbo.provider.server.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
 import com.alibaba.dubbo.config.annotation.Service;
@@ -23,6 +22,7 @@ public class UserServiceImpl implements UserService {
         String userName = "xxxxxYYYYYY";
         return userName;
     }
+
     @Override
     public List<User> getLastHundredUser() {
         try {
@@ -32,10 +32,11 @@ public class UserServiceImpl implements UserService {
         }
         return userMapper.getAllUser1();
     }
-    
+
     @Override
     public List<User> getFirstHundredUser() {
         try {
+            // sleep 测试超时
             Thread.sleep(800);
         } catch (InterruptedException e) {
             e.printStackTrace();
