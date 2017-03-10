@@ -3,15 +3,15 @@ package dubbo.simple.service;
 /**
  * 
  * <p>
- * ±êÌâ£ºCacheService
+ * æ ‡é¢˜ï¼š CacheService
  * </p>
  * <p>
- * ´´½¨ÈÕÆÚ£º 2017Äê3ÔÂ10ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š 2017å¹´3æœˆ10æ—¥
  * </p>
  * <p>
- * ÀàÈ«Ãû£ºCacheService
+ * ç±»å…¨åï¼šCacheService
  * </p>
- * ×÷Õß£ºÂ¦Óñ¶«
+ * ä½œè€…ï¼šå¨„ç‰ä¸œ
  */
 public interface CacheService {
     public Object get(String key);

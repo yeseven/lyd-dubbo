@@ -7,38 +7,20 @@ import dubbo.simple.service.model.User;
 /**
  * 
  * <p>
- * ±êÌâ£º UserService
+ * æ ‡é¢˜ï¼š UserService
  * </p>
  * <p>
- * ´´½¨ÈÕÆÚ£º 2017Äê3ÔÂ8ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š 2017å¹´3æœˆ10æ—¥
  * </p>
  * <p>
- * ÀàÈ«Ãû£ºUserService
+ * ç±»å…¨åï¼šUserService
  * </p>
- * ×÷Õß£ºÂ¦Óñ¶«
+ * ä½œè€…ï¼šå¨„ç‰ä¸œ
  */
 public interface UserService {
-    /**
-     * 
-     * Ãè Êö£ºÍ¨¹ıÓÃ»§id»ñÈ¡ÓÃ»§Ãû³Æ<br/>
-     * ×÷ Õß£ºÂ¦Óñ¶«<br/>
-     * ´´½¨ÈÕÆÚ£º2017Äê3ÔÂ7ÈÕ</p>
-     */
     String getUserName(Integer userId);
 
-    /**
-     * 
-     * Ãè Êö£º»ñÈ¡×î½üµÄ100¸öÓÃ»§ĞÅÏ¢<br/>
-     * ×÷ Õß£ºÂ¦Óñ¶«<br/>
-     * ´´½¨ÈÕÆÚ£º2017Äê3ÔÂ7ÈÕ</p>
-     */
     List<User> getLastHundredUser();
 
-    /**
-     * 
-     * Ãè Êö£º»ñÈ¡×î½üµÄ100¸öÓÃ»§ĞÅÏ¢<br/>
-     * ×÷ Õß£ºÂ¦Óñ¶«<br/>
-     * ´´½¨ÈÕÆÚ£º2017Äê3ÔÂ7ÈÕ</p>
-     */
     List<User> getFirstHundredUser();
 }
