@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration>
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{MMdd HH:mm:ss SSS\} %-5p] [%t] %c{3\} - %m%n" />
+		</layout>
+	</appender>
+	<!-- 输出dubbo日志,每天一个新文件 -->
+	<appender name="dubboAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="G:/lyd/log/mydubbo.txt" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{MMdd HH:mm:ss SSS\} %-5p] [%t] %c{3\} - %m%n" />
+		</layout>
+	</appender>
+
+	<!-- 输出业务日志到文件 文件大小到达指定尺寸的时候产生一个新的文件 -->
+	<appender name="railyFile" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="G:/lyd/log/mylog.txt"></param>
+		<param name="ImmediateFlush" value="true" />
+		<param name="Threshold" value="debug"></param>
+		<param name="Append" value="true"></param>
+		<param name="MaxFileSize" value="30KB"></param>
+		<param name="MaxBackupIndex" value="100"></param>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss\} %-5p] [%t] {%c:%L}-%m%n"></param>
+		</layout>
+	</appender>
+	<root>
+		<priority value="debug" />
+		<appender-ref ref="console" />
+		<appender-ref ref="railyFile" />
+	</root>
+	<logger name="com.alibaba.dubbo" additivity="true">
+		<priority value="debug" />
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="dubboAppender" />
+	</logger>
+</log4j:configuration>

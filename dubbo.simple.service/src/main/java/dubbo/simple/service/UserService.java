@@ -7,10 +7,10 @@ import dubbo.simple.service.model.User;
 /**
  * 
  * <p>
- * 标题： UserService
+ * 标题：UserService
  * </p>
  * <p>
- * 创建日期： 2017年3月10日
+ * 创建日期： 2017年3月13日
  * </p>
  * <p>
  * 类全名：UserService
